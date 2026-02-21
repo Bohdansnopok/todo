@@ -1,0 +1,84 @@
+.header {
+  padding-top: 37px;
+  padding-bottom: 24px;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.07);
+
+  .big-container {
+    display: flex;
+  }
+
+  .header__right-info {
+    display: flex;
+    margin-left: 81px;
+    
+    .header__button ~ .header__button {
+        margin-left: 10px;
+    }
+  }
+
+  .header__button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+  .wrapper__search-input {
+    max-width: 695px;
+    width: 100%;
+    position: relative;
+    margin-left: auto;
+  }
+
+  .search-input {
+    color: #022525;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    max-width: 695px;
+    width: 100%;
+    box-shadow: -26px 108px 31px 0 rgba(0, 0, 0, 0);
+  }
+
+  .wrap__search-input__icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .icons-btn-bg {
+    height: 34px;
+    background-color: #ff6767;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.5s background-color;
+  }
+
+  .icons-btn-bg:hover {
+    background-color: red;
+  }
+
+  .search-input::placeholder {
+    color: #a1a3ab;
+  }
+
+  .search-input:focus {
+    outline: none;
+  }
+
+  .header__day {
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 2px;
+    margin-left: 40px;
+  }
+
+  .header__date {
+    margin-left: 40px;
+    color: #3ABEFF;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
