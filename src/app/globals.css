@@ -86,16 +86,21 @@ h2,
 }
 
 .container {
-  width: 985px;
+  max-width: 985px;
   width: 100%;
   margin: 0 auto;
 }
 
 .site-wrapper {
   display: flex;
-  align-items: start;
+  align-items: flex-start;
   padding-top: 68px;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+}
+
+.site-wrapper > :not(.sidebar) {
+  flex: 1;
+  min-width: 0;
 }
 
 .flex-row {
