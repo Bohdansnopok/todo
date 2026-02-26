@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
+.sing-in__container {
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 0;
+  padding-left: 47px;
+}
+
 .forms {
   min-height: 100dvh;
   padding: 128px;
-  background-image: url(../../../public/images/backgroundDecor.jpg);
+  background-image: url("/images/backgroundDecor.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -42,6 +49,8 @@
     &__label {
       width: 100%;
       position: relative;
+      display: flex;
+      align-items: center;
 
       &__icon {
         position: absolute;
@@ -57,6 +66,47 @@
         font-weight: 500;
         border: 1px solid #565454;
         border-radius: 8px;
+      }
+
+      &__checkbox {
+        margin-right: 12px;
+        width: 18px;
+        height: 18px;
+        border-radius: 0;
+        border: 1px solid #565454;
+      }
+    }
+
+    &__alternatives {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      &__socials {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        &__social {
+          transition: transform 0.3s ease;
+        }
+
+        &__social:hover {
+          cursor: pointer;
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    .form-link {
+      a {
+        text-decoration: none;
+        color: #008bd9;
+        font-weight: 500;
+      }
+
+      a:hover {
+        text-decoration: underline;
       }
     }
   }

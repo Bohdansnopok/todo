@@ -32,14 +32,24 @@ h2,
 }
 
 .redBtn {
+  display: inline-block;
+  width: fit-content;
   background-color: #ff9090;
   color: #f8f9fb;
   padding: 20px 30px;
   border-radius: 5px;
   font-size: 16px;
+  transition: 0.3s all;
+}
+
+.redBtn:hover {
+  background-color: red;
+  transform: scale(1.1);
 }
 
 .orangeBtn {
+  display: inline-block;
+  width: fit-content;
   background-color: #f24e1e;
   color: #ffffff;
   border-radius: 6px;
@@ -76,7 +86,7 @@ h2,
 }
 
 .container {
-  max-width: 985px;
+  width: 985px;
   width: 100%;
   margin: 0 auto;
 }
@@ -85,4 +95,15 @@ h2,
   display: flex;
   align-items: start;
   padding-top: 68px;
+  justify-content: space-between;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }

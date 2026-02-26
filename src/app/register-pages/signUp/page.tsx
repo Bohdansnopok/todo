@@ -19,29 +19,55 @@ export default function SignUp() {
         <form className="forms__form">
           <h1>Sign Up</h1>
           <label htmlFor="" className="forms__form__label">
-            <Image src={firstName} alt="" className="forms__form__label__icon"/>
-            <input type="text" placeholder="Enter First Name" className="forms__form__label__input"/>
+            <Image src={firstName} alt="" className="forms__form__label__icon" />
+            <input
+              type="text"
+              placeholder="Enter First Name"
+              className="forms__form__label__input"
+            />
           </label>
           <label htmlFor="" className="forms__form__label">
-            <Image src={lastName} alt="" className="forms__form__label__icon"/>
-            <input type="text" placeholder="Enter Last Name" className="forms__form__label__input"/>
+            <Image src={lastName} alt="" className="forms__form__label__icon" />
+            <input
+              type="text"
+              placeholder="Enter Last Name"
+              className="forms__form__label__input"
+            />
           </label>
           <label htmlFor="" className="forms__form__label">
-            <Image src={userName} alt="" className="forms__form__label__icon"/>
-            <input type="text" placeholder="Enter Username" className="forms__form__label__input"/>
+            <Image src={userName} alt="" className="forms__form__label__icon" />
+            <input type="text" placeholder="Enter Username" className="forms__form__label__input" />
           </label>
           <label htmlFor="" className="forms__form__label">
-            <Image src={email} alt="" className="forms__form__label__icon"/>
-            <input type="text" placeholder="Enter Email" className="forms__form__label__input"/>
+            <Image src={email} alt="" className="forms__form__label__icon" />
+            <input type="text" placeholder="Enter Email" className="forms__form__label__input" />
           </label>
           <label htmlFor="" className="forms__form__label">
-            <Image src={password} alt="" className="forms__form__label__icon"/>
-            <input type="text" placeholder="Enter Password " className="forms__form__label__input"/>
+            <Image src={password} alt="" className="forms__form__label__icon" />
+            <input
+              type="text"
+              placeholder="Enter Password "
+              className="forms__form__label__input"
+            />
           </label>
           <label htmlFor="" className="forms__form__label">
-            <Image src={confirmPassword} alt="" className="forms__form__label__icon"/>
-            <input type="text" placeholder="Confirm Password" className="forms__form__label__input"/>
+            <Image src={confirmPassword} alt="" className="forms__form__label__icon" />
+            <input
+              type="text"
+              placeholder="Confirm Password"
+              className="forms__form__label__input"
+            />
           </label>
+          <label className="forms__form__label">
+            <input type="checkbox" className="forms__form__label__checkbox" />
+            <p>I agree to all terms</p>
+          </label>
+          <button type="submit" className="redBtn forms__form__button">
+            Register
+          </button>
+          <div className="already-have form-link">
+            Already have an account? <a href="/register-pages/signIn">Sign In</a>
+          </div>
         </form>
       </div>
     </section>
