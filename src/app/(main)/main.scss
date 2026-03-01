@@ -61,4 +61,56 @@
   .dashboard__invite-button:hover {
     transform: scale(1.1);
   }
+
+  &__content {
+    display: flex;
+    align-items: start;
+    padding: 25px;
+    gap: 16px;
+
+    &__left,
+    &__right {
+      width: calc(50% - 16px);
+
+      &__top-line.flex-row {
+        justify-content: space-between;
+      }
+
+      &__top-line {
+        h4 {
+          color: #ff6767;
+          margin-left: 4px;
+        }
+
+        &__add-task-button {
+          gap: 7px;
+          font-size: 15px;
+          cursor: pointer;
+
+          &__plus {
+            font-size: 18px;
+            color: #f24e1e;
+          }
+        }
+      }
+
+      &__date {
+        gap: 30px;
+        margin-top: 10px;
+
+        &__day-and-month {
+          gap: 8px;
+        }
+
+        &__today::marker {
+          font-size: 1.1em;
+        }
+
+        &__today {
+          padding-left: 0px;
+          color: #a1a3ab;
+        }
+      }
+    }
+  }
 }

@@ -7,8 +7,12 @@ import avatar3 from "../../../public/images/SearchIcon3.svg";
 import avatar4 from "../../../public/images/SearchIcon4.svg";
 import avatar5 from "../../../public/images/SearchIcon5.svg";
 import invite from "../../../public/images/invite-icon.svg";
+import pending from "../../../public/images/Pending.svg";
 
 export default function Home() {
+  const dayOfMonth = new Date().getDate();
+  const month = new Date().toLocaleDateString("en-US", { month: "long" });
+
   return (
     <section className="dashboard">
       <div className="container">
@@ -44,6 +48,32 @@ export default function Home() {
               Invite
             </button>
           </div>
+        </div>
+
+        <div className="dashboard__content">
+          <div className="dashboard__content__left">
+            <div className="dashboard__content__left__top-line flex-row">
+              <div className="flex-row">
+                <Image src={pending} alt="" className="dashboard__content__left__top-line__image" />
+                <h4>To-Do</h4>
+              </div>
+              <div className="dashboard__content__left__top-line__add-task-button flex-row">
+                <div className="dashboard__content__left__top-line__add-task-button__plus">+</div>
+                <h6>Add task</h6>
+              </div>
+            </div>
+
+            <div className="dashboard__content__left__date flex-row">
+              <div className="flex-row dashboard__content__left__date__day-and-month">
+                <div className="dashboard__content__left__date__day-of-month">{dayOfMonth}</div>
+                <div className="dashboard__content__left__date__month">{month}</div>
+              </div>
+              <ul>
+                <li className="dashboard__content__left__date__today">Today</li>
+              </ul>
+            </div>
+          </div>
+          <div className="dashboard__content__right"></div>
         </div>
       </div>
     </section>
