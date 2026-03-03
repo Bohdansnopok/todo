@@ -67,21 +67,51 @@
     align-items: start;
     padding: 25px;
     gap: 16px;
+    border: 1px solid rgba(161, 163, 171, 0.63);
+    padding: 22px 26px;
+    margin-top: 32px;
+    height: 761px;
+
+    &__left {
+      padding: 23px 20px;
+      background-color: #fff;
+      box-shadow:
+        0 5px 11px 0 rgba(0, 0, 0, 0.04),
+        0 19px 19px 0 rgba(0, 0, 0, 0.03),
+        0 44px 26px 0 rgba(0, 0, 0, 0.02),
+        0 77px 31px 0 rgba(0, 0, 0, 0.01);
+      border-radius: 14px;
+    }
+
+    &__right {
+      &__status,
+      &__completed-tasks {
+        background-color: #fff;
+        box-shadow:
+          0 5px 11px 0 rgba(0, 0, 0, 0.04),
+          0 19px 19px 0 rgba(0, 0, 0, 0.03),
+          0 44px 26px 0 rgba(0, 0, 0, 0.02),
+          0 77px 31px 0 rgba(0, 0, 0, 0.01);
+        border-radius: 14px;
+        padding: 24px 24px 42px 24px;
+      }
+    }
 
     &__left,
     &__right {
-      width: calc(50% - 16px);
+      width: 50%;
+      height: 100%;
+
+      h4 {
+        color: #ff6767;
+        margin-left: 10px;
+      }
 
       &__top-line.flex-row {
         justify-content: space-between;
       }
 
       &__top-line {
-        h4 {
-          color: #ff6767;
-          margin-left: 4px;
-        }
-
         &__add-task-button {
           gap: 7px;
           font-size: 15px;
@@ -111,6 +141,221 @@
           color: #a1a3ab;
         }
       }
+
+      &__tasks {
+        margin-top: 20px;
+        gap: 10px;
+
+        &__task {
+          padding: 10px 31px 10px 41px;
+          border-radius: 14px;
+          border: 1px solid #a1a3ab;
+          position: relative;
+
+          .flex-row {
+            margin-bottom: 14px;
+            position: relative;
+            height: 112px;
+          }
+
+          &__content {
+            &__image {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+            }
+
+            &__subtitle {
+              max-width: 232px;
+              color: #747474;
+              margin-top: 10px;
+            }
+
+            &__bottom-line {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              &__item {
+                font-size: 10px;
+              }
+
+              &__item.priority {
+                span {
+                  color: #42ade2;
+                }
+              }
+
+              &__item.status {
+                span {
+                  color: #f21e1e;
+                }
+              }
+
+              &__item.created {
+                color: #a1a3ab;
+              }
+            }
+
+            &__check {
+              position: absolute;
+              top: 14px;
+              left: 14px;
+            }
+
+            &__check input[type="checkbox"] {
+              appearance: none;
+              -webkit-appearance: none;
+              width: 18px;
+              height: 18px;
+              border: 2px solid #ff2b2b; /* червона обводка */
+              border-radius: 50%; /* круг */
+              background: transparent;
+              cursor: pointer;
+              display: grid;
+              place-content: center;
+            }
+
+            &__check input[type="checkbox"]::before {
+              content: "";
+              width: 10px;
+              height: 10px;
+              border-radius: 50%;
+              transform: scale(0);
+              transition: 0.15s transform ease-in-out;
+              background: #ff2b2b;
+            }
+
+            &__check input[type="checkbox"]:checked::before {
+              transform: scale(1); /* заповнення при checked */
+            }
+
+            &__check input[type="checkbox"]:focus-visible {
+              outline: 2px solid rgba(255, 43, 43, 0.35);
+              outline-offset: 3px;
+            }
+          }
+        }
+      }
+
+      .line-beetwen-tasks {
+        margin-top: 32px;
+        margin-bottom: 38px;
+      }
+
+      &__status {
+        margin-bottom: 17px;
+      }
+
+      &__circles {
+        gap: 38px;
+        justify-content: space-between;
+        margin-top: 32px;
+      }
+      .circle-container {
+        position: relative;
+        width: 100px;
+        height: 100px;
+      }
+      svg circle {
+        fill: none;
+        stroke-width: 10;
+        cx: 50;
+        cy: 50;
+        r: 45; /* Свойства circle */
+      }
+      .bg {
+        stroke: #ddd; /* Цвет фона */
+      }
+      .progress {
+        stroke-linecap: round;
+        /* Длина окружности 2*PI*R = 2*3.14*45 ≈ 283 */
+        stroke-dasharray: 283;
+        stroke-dashoffset: 283; /* Скрыт изначально */
+        transition: stroke-dashoffset 0.5s ease;
+      }
+      .percentage {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: Arial;
+      }
+
+      .circle-container.completed {
+        .progress {
+          stroke: #05a301;
+        }
+      }
+
+      .circle-container.in-progress {
+        .progress {
+          stroke: #0225ff;
+        }
+      }
+
+      .circle-container.not-started {
+        .progress {
+          stroke: #f21e1e;
+        }
+      }
+
+      &__tasks.today-tasks {
+        max-height: 370px;
+        overflow-y: scroll;
+      }
+
+      &__tasks.closest-tasks {
+        max-height: 180px;
+        overflow-y: scroll;
+      }
+
+      &__completed-tasks {
+        max-height: 480px;
+        overflow-y: scroll;
+
+        .dashboard__content__left__tasks__task {
+          margin-top: 23px;
+
+          input[type="checkbox"] {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #05a301; /* червона обводка */
+            border-radius: 50%; /* круг */
+            background: transparent;
+            cursor: pointer;
+            display: grid;
+            place-content: center;
+          }
+
+          input[type="checkbox"]::before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 0.15s transform ease-in-out;
+            background: #05a301;
+          }
+
+          input[type="checkbox"]:checked::before {
+            transform: scale(1); /* заповнення при checked */
+          }
+
+          input[type="checkbox"]:focus-visible {
+            outline: 2px solid rgba(255, 43, 43, 0.35);
+            outline-offset: 3px;
+          }
+        }
+      }
     }
   }
+}
+
+.line-beetwen-tasks {
+  border-bottom: 2px solid rgba(161, 163, 171, 0.4);
+  height: 1px;
+  width: 100%;
 }
